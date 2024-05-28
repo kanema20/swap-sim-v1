@@ -1,17 +1,23 @@
-pragma solidity ^0.5.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.9;
 
-contract ICurveFiCurve {
+interface ICurvePool {
     function get_virtual_price() external returns (uint256 out);
 
-    function add_liquidity(uint256[2] calldata amounts, uint256 deadline) external;
+    function add_liquidity(uint256[2] calldata amounts, uint256 deadline)
+        external;
 
-    function get_dy(int128 i, int128 j, uint256 dx)
-        external
-        returns (uint256 out);
+    function get_dy(
+        int128 i,
+        int128 j,
+        uint256 dx
+    ) external returns (uint256 out);
 
-    function get_dy_underlying(int128 i, int128 j, uint256 dx)
-        external
-        returns (uint256 out);
+    function get_dy_underlying(
+        int128 i,
+        int128 j,
+        uint256 dx
+    ) external returns (uint256 out);
 
     function exchange(
         int128 i,
@@ -49,8 +55,10 @@ contract ICurveFiCurve {
         uint256[2] calldata min_amounts
     ) external;
 
-    function remove_liquidity_imbalance(uint256[2] calldata amounts, uint256 deadline)
-        external;
+    function remove_liquidity_imbalance(
+        uint256[2] calldata amounts,
+        uint256 deadline
+    ) external;
 
     function commit_new_parameters(
         int128 amplification,

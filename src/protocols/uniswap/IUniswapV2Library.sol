@@ -3,10 +3,10 @@ pragma solidity ^0.8.9;
 
 import "./IUniswapV2Pair.sol";
 
-import "openzeppelin-contracts/contracts/utils/math/SafeMath.sol";
+import "openzeppelin-contracts/contracts/utils/math/Math.sol";
 
 library UniswapV2Library {
-    using SafeMath for uint256;
+    using Math for uint256;
 
     // returns sorted token addresses, used to handle return values from pairs sorted in this order
     function sortTokens(address tokenA, address tokenB)

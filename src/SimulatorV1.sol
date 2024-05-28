@@ -1,13 +1,14 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 
-import "openzeppelin-contracts/contracts/utils/math/SafeMath.sol";
+import "openzeppelin-contracts/contracts/utils/math/Math.sol";
 import "./protocols/uniswap/IQuoterV2.sol";
 import "./protocols/uniswap/IUniswapV2Library.sol";
 import "./protocols/uniswap/IUniswapV2Pair.sol";
+import "./protocols/curve/ICurvePool.sol";
 
 contract SimulatorV1 {
-    using SafeMath for uint256;
+    using Math for uint256;
 
     // ETH mainnet network addresses
     address public UNISWAP_V2_FACTORY = 0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f;
